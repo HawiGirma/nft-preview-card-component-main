@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Ensure padding doesn't affect element size */
 }
 
 body {
@@ -14,26 +15,27 @@ body {
   padding: 30px;
   border-radius: 20px;
   background-color: hsl(216, 50%, 16%);
-  width: 450px;
+  max-width: 450px; /* Max-width to handle smaller screen sizes */
+  margin: auto;
 }
 
 #equi {
-  width: 450px;
+  width: 100%; /* Make the image responsive */
   border-radius: 20px;
 }
 
 h1 {
   margin: 20px 5px;
   font-weight: 500;
+  font-size: 28px; /* Added font size for consistency */
 }
 
 p,
 h2 {
   margin: 10px 0;
   font-weight: 200;
-  font-size: 24px;
+  font-size: 18px; /* Adjusted font size for better readability */
   color: hsl(215, 51%, 70%);
-  /* opacity: 0.5; */
 }
 
 div {
@@ -44,16 +46,22 @@ div {
   gap: 1em;
 }
 
+.price div {
+  display: flex;
+  align-items: center;
+  gap: 0.5em; /* Space between icon and text */
+}
+
 hr {
-  border: 0.5;
+  border: 0.5px solid hsl(215, 51%, 70%);
 }
 
 .footer {
-  justify-content: start;
+  justify-content: flex-start; /* More precise than 'start' */
   gap: 1em;
 }
+
 .footer img {
-  /* justify-content: start; */
   width: 50px;
   height: 50px;
   border: solid 2px white;
@@ -62,7 +70,6 @@ hr {
 
 span {
   font-weight: 700;
-  /* opacity: 100%; */
   color: white;
 }
 
@@ -71,12 +78,12 @@ span {
   font-weight: 700;
 }
 
-hr {
-  color: hsl(215, 51%, 70%);
-}
-
 @media (max-width: 768px) {
   body {
     padding: 10%;
+  }
+  .main {
+    padding: 20px;
+    width: 100%; /* Adjust the width for smaller screens */
   }
 }
